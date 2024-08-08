@@ -7,7 +7,7 @@ namespace WebApiTasks.Controllers
     public class GreeterController : ControllerBase
     {
         [HttpGet]
-        public ActionResult Get([FromQuery] string name = null)
+        public ActionResult Get([FromQuery] string? name = null)
         {
             if (string.IsNullOrEmpty(name))
             {
