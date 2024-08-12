@@ -52,7 +52,7 @@ namespace WebApiTasks.Controllers
             string age = CalculateAge(info.Year, info.Month, info.Day);
             return Ok($"Hello {info.Name} your age is {age}");
         }
-        private string CalculateAge(int? years, int? months, int? days)
+        private static string CalculateAge(int? years, int? months, int? days)
         {
             int day = DateTime.Today.Day;
             int month = DateTime.Today.Month;

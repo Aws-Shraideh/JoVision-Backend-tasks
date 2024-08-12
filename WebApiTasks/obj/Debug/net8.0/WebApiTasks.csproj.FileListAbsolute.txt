@@ -31,3 +31,12 @@ C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\obj\Debug\net8.0\refint\WebA
 C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\obj\Debug\net8.0\WebApiTasks.pdb
 C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\obj\Debug\net8.0\WebApiTasks.genruntimeconfig.cache
 C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\obj\Debug\net8.0\ref\WebApiTasks.dll
+C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\bin\Debug\net8.0\UploadsImage.json
+C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\bin\Debug\net8.0\Uploads\Image2.json
+C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\bin\Debug\net8.0\Uploads\Image.json
