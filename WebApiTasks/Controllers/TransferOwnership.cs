@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime.InteropServices.JavaScript;
 
 namespace WebApiTasks.Controllers
 {
@@ -10,9 +11,15 @@ namespace WebApiTasks.Controllers
         [HttpGet]
         public async Task<ActionResult> Get([FromQuery] string OldOwner, [FromQuery] string NewOwner)
         {
+            if(OldOwner == NewOwner)
+            {
+                return BadRequest("Both owners are the same");
+            }
+
             var path = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
             var files = Directory.GetFiles(path);
             string? fileMetaDataJson = null;
+            var OldOwnerCount = 0;
             List<Dictionary<string, string>> JsonInfo = new List<Dictionary<string, string>>();
             try
             {
@@ -27,6 +34,7 @@ namespace WebApiTasks.Controllers
                         {
                             if (fileMetaData.Owner.ToLower() == OldOwner.ToLower())
                             {
+                                OldOwnerCount++;
                                 fileMetaData.Owner = NewOwner;
                                 await System.IO.File.WriteAllTextAsync(metaDataPath, Newtonsoft.Json.JsonConvert.SerializeObject(fileMetaData));
                             }
@@ -38,6 +46,18 @@ namespace WebApiTasks.Controllers
                             JsonInfo.Add(fileMetaDataList);
                         }
                     }
+                }
+                if (JsonInfo.Count() == 0) 
+                {
+                    return BadRequest($"Neither {OldOwner} or {NewOwner} have any files");
+                }
+                if (OldOwnerCount == 0) 
+                {
+                    return Ok(new { Alert = $"{OldOwner} has no files", Files = JsonInfo });
+                }
+                if (OldOwner.ToLower() == NewOwner.ToLower()) 
+                {
+                    return Ok(new { Alert = $"{OldOwner} no longer has any files", Files = JsonInfo });
                 }
                 return Ok(JsonInfo);
 
