@@ -16,7 +16,7 @@ namespace WebApiTasks.Controllers
             }
 
             var path = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
-            var filePath = Path.Combine(path, fileName + ".jpg");
+            var filePath = Path.Combine(path, fileName);
             var metaDataFilePath = Path.Combine(path, $"{Path.GetFileNameWithoutExtension(fileName)}.json");
 
             if (!System.IO.File.Exists(filePath))
@@ -29,7 +29,7 @@ namespace WebApiTasks.Controllers
                 var metaDataJson = System.IO.File.ReadAllText(metaDataFilePath);
                 var metaData = Newtonsoft.Json.JsonConvert.DeserializeObject<Info>(metaDataJson);
 
-                if (metaData.Owner != fileOwner)
+                if (metaData.Owner.ToLower() != fileOwner.ToLower())
                 {
                     return Forbid("Owner name does not match.");
                 }

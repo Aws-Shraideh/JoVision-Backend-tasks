@@ -3,6 +3,7 @@
     public class Info
     {
         public string? Owner { get; set; }
+        public string? FileName { get; set; }
         public DateTime? CreationTime { get; set; }
         public DateTime? LastModificationTime { get; set; }
     }

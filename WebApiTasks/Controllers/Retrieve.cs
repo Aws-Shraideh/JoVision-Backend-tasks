@@ -9,7 +9,7 @@ namespace WebApiTasks.Controllers
     public class RetrieveController : ControllerBase
     {
         [HttpGet]
-        public ActionResult Retrieve([FromQuery] string? FileName = "Name Without Extenstion", [FromQuery] string? FileOwner = null)
+        public ActionResult Retrieve([FromQuery] string? FileName = null, [FromQuery] string? FileOwner = null)
         {
             if (string.IsNullOrEmpty(FileName) || string.IsNullOrEmpty(FileOwner))
             {
@@ -17,17 +17,17 @@ namespace WebApiTasks.Controllers
             }
 
             var path = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
-            var filePath = Path.Combine(path, $"{FileName}.jpg");
+            var filePath = Path.Combine(path, FileName);
 
             if (!System.IO.File.Exists(filePath))
             {
-                return NotFound("File does not exist.");
+                return NotFound("File not found.");
             }
 
-            var metaDataPath = Path.Combine(path, $"{FileName}.json");
+            var metaDataPath = Path.Combine(path, Path.GetFileNameWithoutExtension(FileName)+".json");
             if (!System.IO.File.Exists(metaDataPath))
             {
-                return NotFound("Metadata does not exist.");
+                return NotFound("Metadata not found.");
             }
 
             var metaDataJson = System.IO.File.ReadAllText(metaDataPath);
@@ -41,7 +41,7 @@ namespace WebApiTasks.Controllers
             try
             {
                 var fileBytes = System.IO.File.ReadAllBytes(filePath);
-                return File(fileBytes, "image/jpg", $"{FileName}.jpg");
+                return File(fileBytes, "image/jpg",FileName);
             }
             catch (Exception ex)
             {

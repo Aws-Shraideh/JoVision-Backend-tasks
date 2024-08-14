@@ -50,6 +50,7 @@ namespace WebApiTasks.Controllers
                 var metaData = new Info
                 {
                     Owner = owner,
+                    FileName = fileName,
                     CreationTime = DateTime.Now,
                     LastModificationTime = DateTime.Now
                 };

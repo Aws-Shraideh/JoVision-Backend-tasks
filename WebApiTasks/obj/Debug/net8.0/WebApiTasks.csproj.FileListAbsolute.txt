@@ -38,5 +38,3 @@ C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\bin\Debug\net8.0\Newtonsoft.
 C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\bin\Debug\net8.0\UploadsImage.json
 C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\bin\Debug\net8.0\Uploads\Image2.json
-C:\Users\cooki\source\repos\WebApiTasks\WebApiTasks\bin\Debug\net8.0\Uploads\Image.json
